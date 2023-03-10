@@ -1,0 +1,136 @@
+.card {
+  width: 35%;
+  margin: 4rem auto;
+  padding: 1rem;
+}
+
+.card_container {
+  background-color: #3d3d3d;
+  margin: 0rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 2rem;
+  padding: 4rem;
+  padding-top: 2rem;
+  box-shadow: var(--main-bg-shadow);
+}
+
+.card_container_name {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.card_container_price {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+.card_container_input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.5rem;
+  color: var(--main-font-color);
+}
+
+.card_container_input input {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: var(--main-font-color);
+  box-shadow: var(--main-bg-shadow);
+}
+
+.card_container_input input::placeholder {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card_container_buyBtn {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.card_container_buyBtn button {
+  background-color: var(--main-font-color);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  border: none;
+}
+.card_container_inputETH {
+  pointer-events: none;
+}
+
+.card_container_buyBtn button:hover {
+  cursor: pointer;
+  box-shadow: var(--main-bg-shadow);
+  background-color: #03001c;
+  transition: all 0.4s linear;
+}
+
+@media screen and (min-device-width: 200px) and (max-device-width: 500px) {
+  .card {
+    width: 100%;
+    margin: 4rem auto;
+    padding: 1rem;
+  }
+
+  .card_container {
+    border-radius: 2rem;
+    padding: 1rem;
+    padding-top: 2rem;
+  }
+
+  .card_container_price {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width: 800px) {
+  .card {
+    width: 80%;
+    margin: 4rem auto;
+    padding: 1rem;
+  }
+  .card_container_price {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-device-width: 800px) and (max-device-width: 1200px) {
+  .card {
+    width: 70%;
+    margin: 4rem auto;
+    padding: 1rem;
+  }
+}

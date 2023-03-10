@@ -1,0 +1,26 @@
+.button button {
+  padding: 0.8rem 1rem;
+  border-radius: 1.1rem;
+  font-weight: bold;
+  font-family: "Tilt Warp", cursive;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  background-color: var(--main-font-color);
+  width: 10rem;
+}
+
+.button button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #03001c;
+  box-shadow: var(--main-bg-shadow);
+  transition: all 0.4s ease-in;
+}
+
+@media screen and (min-device-width: 200px) and (max-device-width: 768px) {
+  .button button:hover {
+    background-color: white;
+    color: var(--main-font-color);
+  }
+}

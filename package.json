@@ -9,8 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@coinbase/wallet-sdk": "^3.6.4",
+    "@ethersproject/networks": "^5.7.1",
+    "@walletconnect/web3-provider": "^1.8.0",
+    "ethers": "5.7.2",
     "next": "13.2.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "web3modal": "^1.9.12"
   }
 }

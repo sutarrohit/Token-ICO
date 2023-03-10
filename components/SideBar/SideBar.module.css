@@ -1,0 +1,38 @@
+.sidebar {
+  width: 100%;
+  padding-block: 1rem;
+  transition: all 0.9s linear;
+}
+
+.sidebar_container {
+  width: 98%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.sidebar_container_left {
+  display: grid;
+  grid-template-columns: 2fr 0.3fr;
+  align-items: center;
+}
+
+.navbar_container_left_logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.sidebar_container_right {
+  margin: 0 auto;
+  font-size: 2rem;
+}
+
+.navbar_container_right_connectBtn {
+  margin: 1.5rem auto;
+  padding-inline: 2rem;
+  transition: all 0.4s ease-in;
+}
+.sidebar_container_left_menuBtn {
+  font-size: 1.5rem;
+}
