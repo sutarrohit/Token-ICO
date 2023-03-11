@@ -7,7 +7,7 @@
 * With Token ICO, companies can easily launch their ICOs and investors can invest in them using cryptocurrencies.
 
 ## Prerequisites
-* To use Token ICO, you need to have a cryptocurrency wallet and some ETH that you can use to invest in ICOs.
+* To use Token ICO, you need to have a cryptocurrency wallet and some Goerli-ETH that you can use to invest in ICOs.
 
 ##  Installing
 
