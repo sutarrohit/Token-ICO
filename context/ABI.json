@@ -50,9 +50,7 @@
   {
     "inputs": [],
     "name": "getIcoStatus",
-    "outputs": [
-      { "internalType": "enum ICOContract.Status", "name": "", "type": "uint8" }
-    ],
+    "outputs": [{ "internalType": "enum ICOContract.Status", "name": "", "type": "uint8" }],
     "stateMutability": "view",
     "type": "function"
   },

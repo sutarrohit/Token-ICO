@@ -4,12 +4,11 @@ import React, { useState, useEffect } from "react";
 import { CoinbaseWalletSDK } from "@coinbase/wallet-sdk";
 
 // INTERNAL IMPORT
-import { contractABI, contractAddress } from "./context";
-
-let getContract;
+import { contractABI, contractAddress, contractERC20ABI, TokenContractAddress } from "./context";
+const GOERLI_RPC_URL = process.env.NEXT_PUBLIC_GOERLI_RPC_URL;
 
 const fetchContract = (signerOrProvider) => {
-  getContract = new ethers.Contract(contractAddress, contractABI, signerOrProvider);
+  const getContract = new ethers.Contract(contractAddress, contractABI, signerOrProvider);
   return getContract;
 };
 
@@ -18,7 +17,7 @@ const providerOptions = {
     package: CoinbaseWalletSDK,
     options: {
       appName: "demo",
-      infuraId: { 5: "https://goerli.infura.io/v3/5be2549ae25048528139423040e0e8ad" },
+      infuraId: { 5: GOERLI_RPC_URL },
     },
   },
 };
@@ -48,6 +47,20 @@ export const ICOProvider = ({ children }) => {
       return contract;
     } catch (error) {
       console.log("Error to Connect Contract", error);
+    }
+  };
+
+  // Get token balance
+  const getTokenBalace = async (add) => {
+    if (!add) {
+      return "Enter Correct Wallet Address";
+    } else {
+      const provider = new ethers.providers.JsonRpcProvider(GOERLI_RPC_URL);
+      const contract = new ethers.Contract(TokenContractAddress, contractERC20ABI, provider);
+      const getBalance = await contract.balanceOf(add);
+      const balance = ethers.utils.formatEther(getBalance);
+      console.log(balance.toString());
+      return balance;
     }
   };
 
@@ -81,6 +94,7 @@ export const ICOProvider = ({ children }) => {
   return (
     <ICOContext.Provider
       value={{
+        getTokenBalace,
         connectingToContract,
         checkWalletIsConnected,
         buyToken,

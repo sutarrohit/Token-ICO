@@ -3,7 +3,7 @@ import Style from "./Button.module.css";
 
 import { ICOContext } from "../../context/ICOContext";
 
-const Button = ({ connectingToContract }) => {
+const Button = ({ connectingToContract, btnName }) => {
   const { web3Provider, setWeb3Provider, checkWalletIsConnected, currentAccount } = useContext(ICOContext);
   const [getProvider, setGetProvider] = useState();
 

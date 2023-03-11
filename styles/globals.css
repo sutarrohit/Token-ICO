@@ -3,7 +3,7 @@
 :root {
   --icons-color: #ffa502;
   --main-font-color: #ffa502;
-  --main-bg-color: #3f3b6c;
+  --main-bg-color: #03001c;
   --main-bg-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
@@ -13,7 +13,7 @@ body {
   margin: 0;
   font-family: "Tilt Warp", cursive;
   font-size: 14px;
-  background-color: black;
+  background-color: var(--main-bg-color);
   background-repeat: no-repeat;
   color: var(--main-font-color);
 }
