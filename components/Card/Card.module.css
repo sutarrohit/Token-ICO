@@ -226,6 +226,6 @@
   }
   .card_container {
     width: 100%;
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
   }
 }
