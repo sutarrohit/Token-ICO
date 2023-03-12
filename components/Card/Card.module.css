@@ -1,3 +1,6 @@
+.main h2 {
+  margin: 1rem 4rem;
+}
 .card {
   width: 80%;
   margin: 4rem auto;
@@ -15,7 +18,7 @@
 }
 
 .card_container_info_Address {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   font-size: 1.5rem;
 }

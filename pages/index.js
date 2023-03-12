@@ -1,12 +1,16 @@
+import React, { useContext, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { Card } from "../components/components";
+import { Card, DefaultPage } from "../components/components";
 
+import { ICOContext } from "../context/ICOContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { checkWalletIsConnected, blockchain } = useContext(ICOContext);
+
   return (
     <div>
       <Card />

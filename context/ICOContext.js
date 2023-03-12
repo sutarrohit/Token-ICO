@@ -28,6 +28,8 @@ export const ICOContext = React.createContext();
 export const ICOProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState("");
   const [web3Provider, setWeb3Provider] = useState(null);
+  const [blockchain, setBlockchain] = useState(0);
+  const [msg, setMsg] = useState("");
 
   // connect Dapp to smart contract
   const connectingToContract = async () => {
@@ -37,14 +39,21 @@ export const ICOProvider = ({ children }) => {
         // providerOptions,
       });
       const connection = await web3Modal.connect();
-      const provider = new ethers.providers.Web3Provider(connection);
-      if (provider) {
-        setWeb3Provider(provider);
+      console.log("conn", connection.networkVersion);
+      if (connection.networkVersion == "5") {
+        const provider = new ethers.providers.Web3Provider(connection);
+        if (provider) {
+          setWeb3Provider(provider);
+        }
+        const signer = provider.getSigner();
+        const contract = fetchContract(signer);
+        setCurrentAccount(1);
+        setMsg("");
+        return contract;
+      } else {
+        setMsg("Wrong network. Connect to The Goerli network");
+        return "Connect to The Goerli network";
       }
-      const signer = provider.getSigner();
-      const contract = fetchContract(signer);
-      setCurrentAccount(1);
-      return contract;
     } catch (error) {
       console.log("Error to Connect Contract", error);
     }
@@ -60,7 +69,7 @@ export const ICOProvider = ({ children }) => {
       const getBalance = await contract.balanceOf(add);
       const balance = ethers.utils.formatEther(getBalance);
       console.log(balance.toString());
-      return balance;
+      return Math.floor(balance);
     }
   };
 
@@ -73,6 +82,7 @@ export const ICOProvider = ({ children }) => {
       });
       if (accounts.length) {
         setCurrentAccount(accounts[0]);
+        setBlockchain(window.ethereum.networkVersion);
       } else {
         console.log("No Account Found");
       }
@@ -85,9 +95,15 @@ export const ICOProvider = ({ children }) => {
   const buyToken = async (tokens, value) => {
     const getValue = ethers.utils.parseEther(value.toString());
     const contract = await connectingToContract();
-    if (getValue) {
+
+    if (getValue && contract != "Connect to The Goerli network") {
       const buyTx = await contract?.distributeToken({ value: getValue });
       console.log("Transaction", buyTx);
+      setMsg("");
+    } else {
+      setMsg("Can't buy tokens please Connect to the goerli network");
+      return "Can't buy tokens please Connect to the goerli network";
+      console.log("Cant buy token Please Connect to the goerli network");
     }
   };
 
@@ -98,9 +114,12 @@ export const ICOProvider = ({ children }) => {
         connectingToContract,
         checkWalletIsConnected,
         buyToken,
+        ICOProvider,
         setWeb3Provider,
         currentAccount,
         web3Provider,
+        blockchain,
+        msg,
       }}
     >
       {children}
