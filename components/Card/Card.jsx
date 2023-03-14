@@ -6,7 +6,7 @@ import Style from "./Card.module.css";
 import { ICOContext } from "../../context/ICOContext";
 
 const Card = () => {
-  const { buyToken, getTokenBalace, blockchain, msg } = useContext(ICOContext);
+  const { buyToken, getTokenBalace, msg } = useContext(ICOContext);
   const [tokenPrice, setTokenPrice] = useState("");
   const [ETHPrice, setETHPrice] = useState(0);
   const [userAddress, setUserAddress] = useState("");

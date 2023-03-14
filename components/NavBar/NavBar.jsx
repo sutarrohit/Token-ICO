@@ -10,7 +10,7 @@ import images from "../../img";
 import { ICOContext } from "../../context/ICOContext";
 
 const NavBar = () => {
-  const { connectingToContract, checkWalletIsConnected, currentAccount } = useContext(ICOContext);
+  const { connectingToContract, currentAccount } = useContext(ICOContext);
   const [openSideMenu, setOpenSideMenu] = useState(false);
 
   // functions

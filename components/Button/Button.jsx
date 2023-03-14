@@ -4,7 +4,7 @@ import Style from "./Button.module.css";
 import { ICOContext } from "../../context/ICOContext";
 
 const Button = ({ connectingToContract, btnName }) => {
-  const { checkWalletIsConnected, currentAccount, blockchain, ICOProvider } = useContext(ICOContext);
+  const { checkWalletIsConnected, currentAccount } = useContext(ICOContext);
 
   useEffect(() => {
     checkWalletIsConnected();
