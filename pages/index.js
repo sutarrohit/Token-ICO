@@ -9,8 +9,6 @@ import { ICOContext } from "../context/ICOContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { checkWalletIsConnected, blockchain } = useContext(ICOContext);
-
   return (
     <div>
       <Card />

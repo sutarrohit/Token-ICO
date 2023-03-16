@@ -7,7 +7,6 @@ import { ImCross } from "react-icons/im";
 import Style from "./SideBar.module.css";
 import images from "../../img";
 import { Button } from "../components";
-
 import { ICOContext } from "../../context/ICOContext";
 
 const SideBar = ({ openMenu }) => {

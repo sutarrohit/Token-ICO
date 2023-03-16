@@ -51,7 +51,7 @@ export const ICOProvider = ({ children }) => {
         setMsg("");
         return contract;
       } else {
-        setMsg("Wrong network. Connect to The Goerli network");
+        setMsg("Wrong network! Connect to The Goerli network");
         return "Connect to The Goerli network";
       }
     } catch (error) {
@@ -87,7 +87,7 @@ export const ICOProvider = ({ children }) => {
         console.log("No Account Found");
       }
     } catch (error) {
-      console.log(`error is ${error}`);
+      console.log(`Wallet Connect error is ${error}`);
     }
   };
 
@@ -103,7 +103,6 @@ export const ICOProvider = ({ children }) => {
     } else {
       setMsg("Can't buy tokens please Connect to the goerli network");
       return "Can't buy tokens please Connect to the goerli network";
-      console.log("Cant buy token Please Connect to the goerli network");
     }
   };
 

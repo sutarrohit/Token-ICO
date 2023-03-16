@@ -33,8 +33,6 @@ const NavBar = () => {
               <p>Token ICO</p>
             </div>
           </Link>
-
-          {/* <p>ICO</p> */}
         </div>
 
         {/* right side */}
