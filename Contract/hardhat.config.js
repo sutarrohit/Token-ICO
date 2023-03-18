@@ -17,7 +17,7 @@ module.exports = {
       url: GOERLI_RPC_URL,
       accounts: [PRIVATE_KEY, PRIVATE_KEY_2],
       chainId: 5,
-      blockconfirmations: 2,
+      blockconfirmations: 1,
     },
 
     sepolia: {

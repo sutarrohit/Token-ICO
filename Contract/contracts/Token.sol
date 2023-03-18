@@ -28,5 +28,5 @@ contract Token is ERC20, Ownable {
 
 }
 
-// Contract =  0xb89a66ea43df876e0Dbf316310e7709a2754354F
+// Contract =  0x53bd0c51A6052f508C029F4970BE63ea271dA724
 // Owner = 0x88a17004a4d99b7095c2c059b3c24ab1b6f49349
