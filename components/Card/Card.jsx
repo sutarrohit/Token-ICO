@@ -41,9 +41,9 @@ const Card = () => {
             <div className={Style.card_container_info_Address}>
               <p>Goerli Contract Address</p>
               <Link
-                href={{ pathname: "https://goerli.etherscan.io/address/0xb89a66ea43df876e0Dbf316310e7709a2754354F" }}
+                href={{ pathname: "https://goerli.etherscan.io/address/0x53bd0c51A6052f508C029F4970BE63ea271dA724" }}
               >
-                <p>0xb89a6...54354F</p>
+                <p>0x53bd0......dA724</p>
               </Link>
             </div>
 
